@@ -1,13 +1,18 @@
-use crate::use_case::UseCase;
+use crate::use_case::UseCaseA1;
 
 mod use_case;
 
+struct CreateGeneratorUseCase;
+
 struct CreateGenerator {
-    name: bool
+    name: String,
+    output: u64,
+    running: bool
 }
 
-impl UseCase for CreateGenerator {
-    fn execute(&self) -> bool {
-        todo!()
+impl UseCaseA1<CreateGenerator> for CreateGeneratorUseCase {
+    type Output = CreateGenerator;
+    fn execute(generator: CreateGenerator) -> Self::Output {
+        return generator
     }
 }
