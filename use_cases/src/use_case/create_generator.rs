@@ -1,6 +1,6 @@
 use crate::use_case::UseCaseA1;
 
-struct CreateGeneratorUseCase;
+pub struct CreateGeneratorUseCase;
 
 struct CreateGenerator {
     name: String,

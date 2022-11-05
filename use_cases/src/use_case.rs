@@ -1,4 +1,4 @@
-mod create_generator;
+pub mod create_generator;
 
 pub trait UseCaseA1<Rhs> {
     type Output;
