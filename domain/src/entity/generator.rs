@@ -1,4 +1,4 @@
-struct Generator {
+pub struct Generator {
     name: String,
     output: u64,
     running: bool
