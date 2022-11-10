@@ -1,8 +1,9 @@
 use crate::use_case::UseCaseA1;
+use domain::entity::generator::Generator;
 use domain::repository::generator_repository::GeneratorRepository;
 
 pub struct CreateGeneratorUseCase {
-    repository: GeneratorRepository
+    repository: Box<dyn GeneratorRepository>
 }
 
 struct CreateGenerator {
@@ -12,9 +13,13 @@ struct CreateGenerator {
 }
 
 impl UseCaseA1<CreateGenerator> for CreateGeneratorUseCase {
-    type Output = CreateGenerator;
+    type Output = Generator;
+
     fn execute(&self, generator: CreateGenerator) -> Self::Output {
-        self.repository.create(generator);
-        return GeneratorRepository::create(generator);
+        self.repository.create(Generator {
+            name: generator.name,
+            output: generator.output,
+            running: generator.running
+        })
     }
 }

@@ -1,7 +1,7 @@
 pub struct Generator {
-    name: String,
-    output: u64,
-    running: bool
+    pub name: String,
+    pub output: u64,
+    pub running: bool
 }
 
 impl Generator {
