@@ -1,5 +1,5 @@
-use crate::use_case::UseCaseA1;
 use domain::entity::generator::Generator;
+use crate::use_case::UseCaseA1;
 use domain::repository::generator_repository::GeneratorRepository;
 
 pub struct CreateGeneratorUseCase {
