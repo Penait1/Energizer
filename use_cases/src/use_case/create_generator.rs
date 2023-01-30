@@ -3,13 +3,14 @@ use crate::use_case::UseCaseA1;
 use domain::repository::generator_repository::GeneratorRepository;
 
 pub struct CreateGeneratorUseCase {
-    repository: Box<dyn GeneratorRepository>
+    pub repository: Box<dyn GeneratorRepository>
 }
 
 struct CreateGenerator {
     name: String,
     output: u64,
-    running: bool
+    running: bool,
+    price: u64
 }
 
 impl UseCaseA1<CreateGenerator> for CreateGeneratorUseCase {
@@ -19,7 +20,8 @@ impl UseCaseA1<CreateGenerator> for CreateGeneratorUseCase {
         self.repository.create(Generator {
             name: generator.name,
             output: generator.output,
-            running: generator.running
+            running: generator.running,
+            price: generator.price
         })
     }
 }

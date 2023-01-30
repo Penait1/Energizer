@@ -1,7 +1,8 @@
 pub struct Generator {
     pub name: String,
     pub output: u64,
-    pub running: bool
+    pub running: bool,
+    pub price: u64
 }
 
 impl Generator {

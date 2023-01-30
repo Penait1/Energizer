@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 actix-web = "4"
 use_cases = { path = "../use_cases" }
+domain = { path = "../domain" }
